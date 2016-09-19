@@ -73,7 +73,7 @@
 
 # 插件下载
 
-[DatabindingConvert_v0.0.2.zip](https://github.com/LiushuiXiaoxia/DatabindingConvert/blob/master/DatabindingConvert_v0.0.2.zip?raw=true)
+[DatabindingConvert_v0.0.2.zip](https://github.com/LiushuiXiaoxia/DatabindingConvert/blob/master/DatabindingConvert_v0.0.2.zip)
 
 # 后续优化
 
