@@ -7,6 +7,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.xml.XmlAttribute;
 import com.intellij.psi.xml.XmlDocument;
@@ -87,6 +88,7 @@ public class ConvertAction extends AnAction {
                 XmlTag rootTag = xmlDocument.getRootTag();
                 Document newDocument = genDatabindingDocument(rootTag, xmlns);
                 String xmlStr = XmlUtil.documentToXmlString(newDocument);
+                xmlStr = XmlUtil.formatXml(xmlStr);
 
                 // 删除最后一个回车
                 if (xmlStr.endsWith("\n")) {
@@ -95,7 +97,10 @@ public class ConvertAction extends AnAction {
 
                 // 写入文件
                 IOUtil.writeToFile(virtualFile.getPath(), xmlStr);
-                virtualFile.refresh(true, false);
+                virtualFile.refresh(true, true);
+                RefreshQueue.getInstance().createSession(true, true, () -> {
+
+                });
 
                 // 格式化,不知道怎么写?
 //                new XmlFormattingModelBuilder()

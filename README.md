@@ -73,7 +73,7 @@
 
 # 插件下载
 
-[DatabindingConvert_v0.1.jar](https://github.com/LiushuiXiaoxia/DatabindingConvert/blob/master/DatabindingConvert_v0.1.jar?raw=true)
+[DatabindingConvert_v0.0.1.jar](https://github.com/LiushuiXiaoxia/DatabindingConvert/blob/master/DatabindingConvert_v0.0.1.jar?raw=true)
 
 # 后续优化
 
@@ -81,5 +81,7 @@
 * 创建带模板的Databinding文件
 
 # 版本更新
+
+* v0.0.2 简单的格式化代码
 
 * v0.0.1 完成基本的布局转换

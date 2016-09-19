@@ -1,14 +1,14 @@
 package cn.mycommons.tools.plugin.databindingconvert.util;
 
+import org.dom4j.DocumentHelper;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.XMLWriter;
 import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Document;
 
-import java.io.IOException;
 import java.io.StringWriter;
 
-import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
@@ -20,16 +20,30 @@ import javax.xml.transform.stream.StreamResult;
 public class XmlUtil {
 
     @NotNull
-    public static String documentToXmlString(Document newDocument) throws TransformerException, IOException {
+    public static String documentToXmlString(Document document) throws Exception {
         TransformerFactory tf = TransformerFactory.newInstance(); //此抽象类的实例能够将源树转
         Transformer transformer = tf.newTransformer();
-        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");//设置转换中世纪的输出属性
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");//
         StringWriter writer = new StringWriter();
-        StreamResult result = new StreamResult(writer);//充当转换结果的持有者，可以为xml、纯文本、HTML或某些其他格式的标记
-        DOMSource source = new DOMSource(newDocument); //创建带有DOM节点的新输入源
-        transformer.transform(source, result);//将XML Source转换为Result
+        StreamResult result = new StreamResult(writer);
+        DOMSource source = new DOMSource(document);
+        transformer.transform(source, result);
         writer.close();
         return writer.toString();
+    }
+
+    public static String formatXml(String xml) throws Exception {
+        StringWriter out = new StringWriter();
+        try {
+            OutputFormat formate = OutputFormat.createPrettyPrint();
+            formate.setIndentSize(4);
+            formate.setNewLineAfterDeclaration(false);
+            XMLWriter xmlWriter = new XMLWriter(out, formate);
+            xmlWriter.write(DocumentHelper.parseText(xml));
+            xmlWriter.flush();
+            xmlWriter.close();
+        } finally {
+            out.close();
+        }
+        return out.toString();
     }
 }
