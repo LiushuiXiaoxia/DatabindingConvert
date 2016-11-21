@@ -1,7 +1,7 @@
 <idea-plugin version="2">
 	<id>cn.mycommons.tools.plugin.databindingconvert</id>
 	<name>DatabindingConvert</name>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<vendor email="xiaqiulei@126.com"
 		url="https://github.com/LiushuiXiaoxia/DatabindingConvert">LiushuiXiaoxia
 	</vendor>
@@ -11,7 +11,7 @@
     ]]></description>
 
 	<change-notes><![CDATA[
-      Nothing.
+      .Add convert action with no data element.
     ]]>
 	</change-notes>
 
@@ -36,6 +36,15 @@
 			class="cn.mycommons.tools.plugin.databindingconvert.action.ConvertAction"
 			text="Databinding convert"
 			description="Databinding convert">
+			<add-to-group group-id="CodeMenu"
+				anchor="last" />
+			<add-to-group group-id="GenerateGroup"
+				anchor="first" />
+		</action>
+		<action id="MainActionWithNoData"
+			class="cn.mycommons.tools.plugin.databindingconvert.action.ConvertNoDatAction"
+			text="Databinding convert with no data"
+			description="Databinding convert with no data">
 			<add-to-group group-id="CodeMenu"
 				anchor="last" />
 			<add-to-group group-id="GenerateGroup"

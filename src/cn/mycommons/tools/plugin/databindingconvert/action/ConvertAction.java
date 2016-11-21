@@ -146,15 +146,17 @@ public class ConvertAction extends AnAction {
             keys.add(item.key);
         }
 
-        Element data = newDocument.createElement("data");
-        Element importElement = newDocument.createElement("import");
-        importElement.setAttribute("type", "");
-        data.appendChild(importElement);
-        Element variableElement = newDocument.createElement("variable");
-        variableElement.setAttribute("name", "");
-        variableElement.setAttribute("type", "");
-        data.appendChild(variableElement);
-        root.appendChild(data);
+        if (hasDataElement()) {
+            Element data = newDocument.createElement("data");
+            Element importElement = newDocument.createElement("import");
+            importElement.setAttribute("type", "");
+            data.appendChild(importElement);
+            Element variableElement = newDocument.createElement("variable");
+            variableElement.setAttribute("name", "");
+            variableElement.setAttribute("type", "");
+            data.appendChild(variableElement);
+            root.appendChild(data);
+        }
 
         Element newRoot = newDocument.createElement(rootTag.getName());
         copyXml(newDocument, rootTag, newRoot, root, keys);
@@ -183,5 +185,9 @@ public class ConvertAction extends AnAction {
                 copyXml(document, xmlTag, newElement, targetElement, excludes);
             }
         } while (false);
+    }
+
+    protected boolean hasDataElement() {
+        return true;
     }
 }
