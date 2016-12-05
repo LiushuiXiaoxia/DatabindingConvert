@@ -73,7 +73,7 @@
 
 # 插件下载
 
-[DatabindingConvert_v0.0.3.zip](https://github.com/LiushuiXiaoxia/DatabindingConvert/blob/master/DatabindingConvert_v0.0.3.zip)
+[DatabindingConvert_v0.0.4.zip](https://github.com/LiushuiXiaoxia/DatabindingConvert/blob/master/DatabindingConvert_v0.0.4.zip)
 
 # 后续优化
 
@@ -81,6 +81,10 @@
 * 创建带模板的Databinding文件
 
 # 版本更新
+
+* v0.0.4 优化xml生成,支持文件撤销操作
+
+* v0.0.3 支持添加无data元素的xml
 
 * v0.0.2 简单的格式化代码
 

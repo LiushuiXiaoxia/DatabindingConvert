@@ -1,7 +1,7 @@
 <idea-plugin version="2">
 	<id>cn.mycommons.tools.plugin.databindingconvert</id>
 	<name>DatabindingConvert</name>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<vendor email="xiaqiulei@126.com"
 		url="https://github.com/LiushuiXiaoxia/DatabindingConvert">LiushuiXiaoxia
 	</vendor>
@@ -11,7 +11,9 @@
     ]]></description>
 
 	<change-notes><![CDATA[
+	  .Basic operation.
       .Add convert action with no data element.
+      .Optimize xml generation, support file revocation.
     ]]>
 	</change-notes>
 
