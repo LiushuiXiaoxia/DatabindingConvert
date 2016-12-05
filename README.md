@@ -4,7 +4,7 @@
 
 # 简介
 
-一个简单的Android Studio 插件，把当前的布局文件转化成Databinding的形式。
+一个简单的 [Android Studio插件](https://plugins.jetbrains.com/plugin/8611?pr=idea) ，把当前的布局文件转化成Databinding的形式。
 
 如，当一个布局文件如下所示:
 
