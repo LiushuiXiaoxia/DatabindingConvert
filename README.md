@@ -89,3 +89,7 @@
 * v0.0.2 简单的格式化代码
 
 * v0.0.1 完成基本的布局转换
+
+# 其他
+
+* 这边有个 [AutoValueConver插件](https://github.com/LiushuiXiaoxia/AutoValueConvert) ,你可能需要?
