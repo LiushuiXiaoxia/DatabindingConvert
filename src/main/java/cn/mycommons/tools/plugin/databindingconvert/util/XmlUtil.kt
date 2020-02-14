@@ -32,7 +32,7 @@ object XmlUtil {
     @Throws(Exception::class)
     fun formatXml(xml: String?): String {
         val out = StringWriter()
-        out.use { out ->
+        out.use {
             val format = OutputFormat.createPrettyPrint()
             format.setIndentSize(4)
             format.isNewLineAfterDeclaration = false

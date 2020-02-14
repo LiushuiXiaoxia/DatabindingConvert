@@ -1,7 +1,7 @@
 <idea-plugin version="2">
 	<id>cn.mycommons.tools.plugin.databindingconvert</id>
 	<name>DatabindingConvert</name>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<vendor email="xiaqiulei@126.com" url="https://github.com/LiushuiXiaoxia/DatabindingConvert">
 		LiushuiXiaoxia
 	</vendor>
@@ -19,6 +19,9 @@
 
 	<!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
 	<idea-version since-build="141.0" />
+
+	<depends>com.intellij.modules.java</depends>
+	<depends>org.jetbrains.kotlin</depends>
 
 	<!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
 		 on how to target different products -->
@@ -54,16 +57,16 @@
 		</action>
 	</actions>
 
-	<application-components>
-		<component>
-			<implementation-class>cn.mycommons.tools.plugin.databindingconvert.MyApplicationComponent
-			</implementation-class>
-		</component>
-	</application-components>
-	<project-components>
-		<component>
-			<implementation-class>cn.mycommons.tools.plugin.databindingconvert.MyProjectComponent</implementation-class>
-		</component>
-	</project-components>
+<!--	<application-components>-->
+<!--		<component>-->
+<!--			<implementation-class>cn.mycommons.tools.plugin.databindingconvert.MyApplicationComponent-->
+<!--			</implementation-class>-->
+<!--		</component>-->
+<!--	</application-components>-->
+<!--	<project-components>-->
+<!--		<component>-->
+<!--			<implementation-class>cn.mycommons.tools.plugin.databindingconvert.MyProjectComponent</implementation-class>-->
+<!--		</component>-->
+<!--	</project-components>-->
 
 </idea-plugin>
