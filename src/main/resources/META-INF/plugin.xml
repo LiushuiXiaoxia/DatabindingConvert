@@ -1,7 +1,7 @@
 <idea-plugin version="2">
 	<id>cn.mycommons.tools.plugin.databindingconvert</id>
 	<name>DatabindingConvert</name>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<vendor email="xiaqiulei@126.com" url="https://github.com/LiushuiXiaoxia/DatabindingConvert">
 		LiushuiXiaoxia
 	</vendor>

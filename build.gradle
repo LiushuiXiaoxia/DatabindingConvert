@@ -1,9 +1,16 @@
 buildscript {
+    println("======================")
+    println("GITHUB_CI = $GITHUB_CI")
+    println("======================")
+
     repositories {
         mavenLocal()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        mavenCentral()
         jcenter()
+        google()
+        if (!Boolean.parseBoolean(GITHUB_CI)) {
+            maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        }
+        mavenCentral()
     }
 }
 
@@ -15,9 +22,12 @@ plugins {
 
 repositories {
     mavenLocal()
-    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-    mavenCentral()
     jcenter()
+    google()
+    if (!Boolean.parseBoolean(GITHUB_CI)) {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    mavenCentral()
 }
 
 group 'cn.mycommons'
@@ -58,12 +68,12 @@ patchPluginXml {
 """
 }
 
-if (project.hasProperty('intellijPublishUsername')
-        && project.hasProperty('intellijPublishPassword')
-        && project.hasProperty('intellijPublishToken')) {
+def publishToken = System.getenv("intellijPublishToken")
+println("publishToken = $publishToken")
+if (publishToken != null && publishToken.length() > 0) {
     publishPlugin {
-        token intellijPublishToken
-        username intellijPublishUsername
-        password intellijPublishPassword
+        token publishToken
+        // username intellijPublishUsername
+        // password intellijPublishPassword
     }
 }

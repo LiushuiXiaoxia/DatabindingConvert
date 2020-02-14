@@ -2,6 +2,8 @@
 
 ---
 
+![Java CI](https://github.com/LiushuiXiaoxia/DatabindingConvert/workflows/Java%20CI/badge.svg)
+
 # 简介
 
 一个简单的 [Android Studio插件](https://plugins.jetbrains.com/plugin/8611?pr=idea) ，把当前的布局文件转化成Databinding的形式。
