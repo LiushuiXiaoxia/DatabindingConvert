@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DatabindingConvert.iml" filepath="$PROJECT_DIR$/DatabindingConvert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DatabindingConvert.iml" filepath="$PROJECT_DIR$/.idea/DatabindingConvert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DatabindingConvert.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DatabindingConvert.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DatabindingConvert.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DatabindingConvert.test.iml" />
     </modules>
   </component>
 </project>

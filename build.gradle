@@ -1,0 +1,69 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.15'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
+}
+
+repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+    jcenter()
+}
+
+group 'cn.mycommons'
+version '0.2.0'
+
+sourceCompatibility = 1.8
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50"
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+intellij {
+    pluginName 'DatabindingConvert'
+    version '2019.3'
+    plugins = ['java', 'Kotlin']
+    updateSinceUntilBuild false
+    sandboxDirectory = "${project.rootDir}/sandbox"
+}
+
+patchPluginXml {
+    changeNotes """.Basic operation.
+.Add convert action with no data element.
+.Optimize xml generation, support file revocation.
+.Support Idea 2019.3 above.
+"""
+}
+
+if (project.hasProperty('intellijPublishUsername')
+        && project.hasProperty('intellijPublishPassword')
+        && project.hasProperty('intellijPublishToken')) {
+    publishPlugin {
+        token intellijPublishToken
+        username intellijPublishUsername
+        password intellijPublishPassword
+    }
+}
